@@ -43,7 +43,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cMC-Ez-p5c">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="RWQ-t1-0E6"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="RWQ-t1-0E6">
+                            <connections>
+                                <action selector="didTapAdd" destination="BYZ-38-t0r" id="oVX-pr-EHj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="84x-5w-m7O" id="nte-KN-yFT"/>
@@ -53,25 +57,43 @@
             </objects>
             <point key="canvasLocation" x="893" y="119"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="TLV-ag-ocb">
             <objects>
-                <viewController id="pip-oe-HWw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="entry" id="pip-oe-HWw" customClass="EntryViewController" customModule="SB_Tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eix-Bj-wro">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsD-Ug-c2q">
+                                <rect key="frame" x="20" y="64" width="374" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="CP2-we-BeE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tOp-7J-ZWL"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jsD-Ug-c2q" firstAttribute="leading" secondItem="tOp-7J-ZWL" secondAttribute="leading" constant="20" id="0zs-6g-Epa"/>
+                            <constraint firstItem="tOp-7J-ZWL" firstAttribute="trailing" secondItem="jsD-Ug-c2q" secondAttribute="trailing" constant="20" id="IUB-KX-7Ai"/>
+                            <constraint firstItem="jsD-Ug-c2q" firstAttribute="top" secondItem="tOp-7J-ZWL" secondAttribute="top" constant="20" id="Spt-5q-eFy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="field" destination="jsD-Ug-c2q" id="t6n-E6-e7U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcw-x9-dP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="893" y="794"/>
         </scene>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="duu-YP-u8X">
             <objects>
-                <viewController id="DET-Gi-j3w" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="task" id="DET-Gi-j3w" customClass="TaskViewController" customModule="SB_Tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ip2-VP-AVW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

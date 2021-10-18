@@ -17,11 +17,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.title = "Tasks"
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         // Get all current saved tasks
     }
 
     @IBAction func didTapAdd() {
-        
+        let vc = storyboard?.instantiateViewController(identifier: "entry") as! EntryViewController
+        vc.title = "New Task"
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
